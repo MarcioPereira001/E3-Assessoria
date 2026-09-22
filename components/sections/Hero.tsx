@@ -51,6 +51,58 @@ const Hero: React.FC = () => {
                 className="relative z-10 w-full flex items-end justify-center"
              >
                 <div className="relative w-full max-w-[280px] md:max-w-md lg:max-w-lg mx-auto">
+                    {/* Shadow/Ghost Images (Black & White, 25% opacity) */}
+                    <motion.img 
+                      src="https://www.image2url.com/r2/default/images/1789766622213-b212deec-5b43-464b-8485-af659a6a7b4c.png" 
+                      alt="Subject Ghost Left"
+                      className="absolute top-0 -left-12 lg:-left-20 w-full h-auto object-contain z-0 grayscale blur-[2px]"
+                      style={{
+                        maskImage: 'linear-gradient(to top, transparent 0%, black 50%)',
+                        WebkitMaskImage: 'linear-gradient(to top, transparent 0%, black 50%)',
+                      }}
+                      initial={{ x: -300, opacity: 0 }}
+                      animate={{ 
+                        x: [ -300, 0, 0, -300, -300 ],
+                        opacity: [ 0, 0.25, 0.25, 0, 0.25, 0, 0.25, 0.25, 0.1, 0.05, 0 ] 
+                      }}
+                      transition={{
+                        duration: 20,
+                        repeat: Infinity,
+                        times: [0, 0.025, 0.825, 0.85, 1], // 0.5s entry, stays, 0.5s exit, 3s idle
+                        ease: "easeInOut",
+                        opacity: {
+                          duration: 20,
+                          times: [0, 0.025, 0.4, 0.41, 0.42, 0.43, 0.44, 0.8, 0.825, 0.84, 0.85, 1],
+                          values: [0, 0.25, 0.25, 0, 0.25, 0, 0.25, 0.25, 0.1, 0.05, 0, 0]
+                        }
+                      }}
+                    />
+                    <motion.img 
+                      src="https://www.image2url.com/r2/default/images/1789766622213-b212deec-5b43-464b-8485-af659a6a7b4c.png" 
+                      alt="Subject Ghost Right"
+                      className="absolute top-0 -right-20 lg:-right-32 w-[120%] h-auto object-contain z-0 grayscale blur-[3px]"
+                      style={{
+                        maskImage: 'linear-gradient(to top, transparent 0%, black 50%)',
+                        WebkitMaskImage: 'linear-gradient(to top, transparent 0%, black 50%)',
+                      }}
+                      initial={{ x: 300, opacity: 0 }}
+                      animate={{ 
+                        x: [ 300, 0, 0, 300, 300 ],
+                        opacity: [ 0, 0.15, 0.15, 0, 0.15, 0, 0.15, 0.15, 0.05, 0.02, 0 ] 
+                      }}
+                      transition={{
+                        duration: 20,
+                        repeat: Infinity,
+                        times: [0, 0.025, 0.825, 0.85, 1],
+                        ease: "easeInOut",
+                        opacity: {
+                          duration: 20,
+                          times: [0, 0.025, 0.45, 0.46, 0.47, 0.48, 0.49, 0.8, 0.825, 0.84, 0.85, 1],
+                          values: [0, 0.15, 0.15, 0, 0.15, 0, 0.15, 0.15, 0.05, 0.02, 0, 0]
+                        }
+                      }}
+                    />
+
                     {/* The Image with Gradient Mask and Shadows */}
                     <img 
                       src="https://www.image2url.com/r2/default/images/1789766622213-b212deec-5b43-464b-8485-af659a6a7b4c.png" 
