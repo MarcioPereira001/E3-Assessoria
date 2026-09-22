@@ -1,0 +1,8 @@
+{
+  "name": "Protocolo Escala - Estruturação Comercial e Tráfego Pago",
+  "description": "Otimize sua empresa com o Protocolo Escala. Especialistas em Marketing Digital, Tráfego Pago e Estruturação Comercial para aumentar sua margem de lucro.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
