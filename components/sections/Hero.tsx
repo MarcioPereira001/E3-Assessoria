@@ -68,15 +68,15 @@ const Hero: React.FC = () => {
         </motion.div>
 
         <motion.div 
-          animate={{ y: isShrunk ? -100 : 0 }}
+          animate={{ y: isShrunk ? -80 : 0 }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
           className="flex flex-col items-center max-w-5xl mx-auto text-center"
         >
           
-          {/* Subject Image with Effects - Now at the background of the text or tightly above */}
-          <div className="relative w-full flex items-end justify-center -mb-20 lg:-mb-32">
+          {/* Subject Image - Tighter on mobile */}
+          <div className="relative w-full flex items-end justify-center -mb-12 md:-mb-20 lg:-mb-32">
              {/* Glow behind the person */}
-             <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-64 lg:w-[500px] h-64 lg:h-[500px] bg-neon-blue/15 rounded-full blur-[100px] pointer-events-none" />
+             <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-48 md:w-64 lg:w-[500px] h-48 md:h-64 lg:h-[500px] bg-neon-blue/15 rounded-full blur-[80px] md:blur-[100px] pointer-events-none" />
              
              <motion.div
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -84,7 +84,7 @@ const Hero: React.FC = () => {
                 transition={{ duration: 1.2, ease: "easeOut" }}
                 className="relative z-10 w-full flex items-end justify-center"
              >
-                <div className="relative w-full max-w-[280px] md:max-w-md lg:max-w-lg mx-auto">
+                <div className="relative w-full max-w-[240px] md:max-w-md lg:max-w-lg mx-auto">
                     {/* Shadow/Ghost Images (Black & White, 25% opacity) */}
                     <motion.img 
                       src="https://www.image2url.com/r2/default/images/1789766622213-b212deec-5b43-464b-8485-af659a6a7b4c.png" 

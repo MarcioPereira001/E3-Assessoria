@@ -35,10 +35,10 @@ const PainPoints: React.FC = () => {
       <div className="text-center max-w-4xl mx-auto mb-12 lg:mb-20 relative">
         <div className="font-mono text-neon-blue text-[8px] lg:text-[10px] tracking-[0.5em] mb-4 opacity-50 uppercase">Diagnóstico de Gestão de Negócios</div>
         <h2 className="font-orbitron font-black text-center flex flex-col items-center mb-10 lg:mb-14">
-          <span className="text-[67px] leading-[52px] text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-red-500 to-red-400 text-glow-red uppercase">
+          <span className="text-[40px] md:text-[67px] leading-tight md:leading-[52px] text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-red-500 to-red-400 text-glow-red uppercase">
             GARGALOS
           </span>
-          <span className="text-[22px] leading-[22px] text-white tracking-[0.6em] uppercase mt-4 opacity-90 font-bold">
+          <span className="text-[14px] md:text-[22px] leading-tight md:leading-[22px] text-white tracking-[0.4em] md:tracking-[0.6em] uppercase mt-2 md:mt-4 opacity-90 font-bold">
             de Crescimento
           </span>
         </h2>
@@ -47,22 +47,22 @@ const PainPoints: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 relative px-4 lg:px-0 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4 relative px-2 md:px-0 max-w-6xl mx-auto">
         {pains.map((pain, index) => (
-          <div key={index} className="bg-white/5 backdrop-blur-xl border border-white/10 p-5 rounded-[20px] hover:bg-white/10 hover:border-white/20 transition-all duration-500 group hover:-translate-y-1 relative overflow-hidden shadow-xl flex flex-col justify-between min-h-[220px]">
+          <div key={index} className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 md:p-5 rounded-[24px] md:rounded-[20px] hover:bg-white/10 hover:border-white/20 transition-all duration-500 group hover:-translate-y-1 relative overflow-hidden shadow-xl flex flex-col justify-between min-h-[200px] md:min-h-[220px]">
             {/* Subtle glow on hover */}
             <div className="absolute -inset-1 bg-gradient-to-br from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity blur-lg" />
             
             <div className="relative z-10">
-              <div className="mb-3 text-red-500/80 group-hover:text-red-500 transition-all duration-300 w-9 h-9 flex items-center justify-start relative z-10">
-                {React.cloneElement(pain.icon as React.ReactElement, { size: 28 })}
+              <div className="mb-4 md:mb-3 text-red-500/80 group-hover:text-red-500 transition-all duration-300 w-10 h-10 md:w-9 md:h-9 flex items-center justify-start relative z-10">
+                {React.cloneElement(pain.icon as React.ReactElement, { size: 32 })}
               </div>
-              <h3 className="text-base lg:text-lg font-orbitron font-bold text-white mb-2 tracking-tighter uppercase relative z-10 leading-tight">{pain.title}</h3>
-              <p className="text-[#8b6464] text-xs lg:text-sm leading-relaxed transition-colors relative z-10 line-clamp-3">{pain.desc}</p>
+              <h3 className="text-lg md:text-lg font-orbitron font-bold text-white mb-3 md:mb-2 tracking-tighter uppercase relative z-10 leading-tight">{pain.title}</h3>
+              <p className="text-[#8b6464] text-sm md:text-sm leading-relaxed transition-colors relative z-10">{pain.desc}</p>
             </div>
             
             {/* Bottom identifier marker */}
-            <div className="mt-2 pt-2 border-t border-white/5 font-mono text-[8px] text-white/20 group-hover:text-white/40 transition-colors uppercase tracking-[0.2em] relative z-10">Diagnóstico {index + 1}</div>
+            <div className="mt-4 pt-3 border-t border-white/5 font-mono text-[9px] text-white/20 group-hover:text-white/40 transition-colors uppercase tracking-[0.2em] relative z-10">Diagnóstico {index + 1}</div>
           </div>
         ))}
       </div>

@@ -43,7 +43,7 @@ const FloatingWhatsApp: React.FC = () => {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: 10, scale: 0.95 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="mr-4 bg-white/10 backdrop-blur-md border border-white/10 rounded-lg py-2 px-4 shadow-2xl pointer-events-none group-hover:shadow-[0_0_15px_rgba(37,99,235,0.4)] transition-all duration-500"
+            className="absolute right-16 bottom-1 md:relative md:right-0 md:bottom-0 mr-2 md:mr-4 bg-white/10 backdrop-blur-md border border-white/10 rounded-lg py-2 px-4 shadow-2xl pointer-events-none group-hover:shadow-[0_0_15px_rgba(37,99,235,0.4)] transition-all duration-500"
           >
             <span className="text-[12px] font-medium text-slate-200 whitespace-nowrap tracking-wide">
               Agende seu Diagnóstico Agora

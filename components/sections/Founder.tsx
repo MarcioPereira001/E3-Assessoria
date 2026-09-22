@@ -21,7 +21,7 @@ const Founder: React.FC = () => {
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id as any)}
-            className={`px-8 py-3 rounded-full font-orbitron text-[10px] lg:text-xs tracking-widest transition-all duration-300 border border-white/5 ${
+            className={`px-6 md:px-8 py-3.5 md:py-3 rounded-full font-orbitron text-[11px] md:text-xs tracking-widest transition-all duration-300 border border-white/5 ${
               activeTab === tab.id 
                 ? 'bg-white/10 text-neon-blue shadow-[0_0_15px_rgba(45,140,255,0.15)]' 
                 : 'bg-slate-800/10 text-slate-400 hover:text-slate-200'
@@ -44,7 +44,7 @@ const Founder: React.FC = () => {
               className="max-w-4xl mx-auto text-center"
             >
               <div className="flex justify-center mb-10">
-                <div className="w-full max-w-xs lg:max-w-3xl h-[140px] flex items-center justify-center group transition-all duration-500">
+                <div className="w-full max-w-xs lg:max-w-3xl h-[80px] md:h-[140px] flex items-center justify-center group transition-all duration-500">
                   <img 
                     src="https://www.image2url.com/r2/default/images/1790117567442-7c2785de-6622-4413-9ac5-a12930f8a790.png" 
                     alt="E3 Assessoria Logo" 

@@ -49,24 +49,24 @@ const Methodology: React.FC = () => {
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: i * 0.2, duration: 0.8 }}
-              className="group relative bg-gradient-to-br from-white/5 to-transparent backdrop-blur-xl p-8 lg:p-10 rounded-2xl border-t border-white/10 hover:bg-white/5 hover:border-blue-500/30 transition-all duration-500 shadow-2xl overflow-hidden"
+              className="group relative bg-gradient-to-br from-white/5 to-transparent backdrop-blur-xl p-8 lg:p-10 rounded-2xl border border-white/10 hover:bg-white/5 hover:border-blue-500/30 transition-all duration-500 shadow-2xl overflow-hidden"
             >
-              {/* Watermark Number - Moved higher to avoid title collision */}
-              <span className="absolute top-2 right-6 text-8xl font-black text-white/[0.03] group-hover:text-white/[0.08] transition-all duration-500 pointer-events-none select-none italic leading-none">
+              {/* Watermark Number */}
+              <span className="absolute top-2 right-6 text-7xl md:text-8xl font-black text-white/[0.03] group-hover:text-white/[0.08] transition-all duration-500 pointer-events-none select-none italic leading-none">
                 {p.id}
               </span>
 
-              {/* Icon - Positioned at top left aligned with number height */}
+              {/* Icon */}
               <div className="absolute top-8 left-8 p-0 group-hover:scale-110 transition-transform duration-500">
                 {p.icon}
               </div>
 
               <div className="relative z-10 pt-16">
-                <h3 className="text-white font-bold text-xl mb-4 tracking-wider uppercase font-orbitron">
+                <h3 className="text-white font-bold text-xl md:text-xl mb-4 tracking-wider uppercase font-orbitron">
                   {p.name}
                 </h3>
                 
-                <p className="text-slate-400 text-sm lg:text-base leading-relaxed group-hover:text-slate-200 transition-colors">
+                <p className="text-slate-300 md:text-slate-400 text-base md:text-base leading-relaxed group-hover:text-slate-200 transition-colors">
                   {p.desc}
                 </p>
               </div>

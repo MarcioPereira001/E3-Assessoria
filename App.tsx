@@ -19,6 +19,17 @@ const App: React.FC = () => {
           <BackgroundEffects />
       </div>
 
+      {/* Persistent Top Logo */}
+      <div className="fixed top-0 left-0 w-full z-[100] px-6 py-4 pointer-events-none">
+        <div className="container mx-auto flex justify-start">
+          <img 
+            src="https://www.image2url.com/r2/default/images/1790117567442-7c2785de-6622-4413-9ac5-a12930f8a790.png" 
+            alt="E3 Assessoria Logo" 
+            className="h-6 lg:h-8 w-auto object-contain opacity-40 hover:opacity-100 transition-opacity pointer-events-auto"
+          />
+        </div>
+      </div>
+
       {/* Content Stack */}
       <div className="relative z-10 flex flex-col gap-0">
         <Hero />

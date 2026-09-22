@@ -13,9 +13,9 @@ const CtaSection: React.FC = () => {
         {/* Refined label */}
         <div className="relative z-10 font-mono text-neon-blue text-[10px] lg:text-[12px] tracking-[0.6em] mb-4 lg:mb-6 font-bold opacity-80 uppercase">Ativação de Crescimento</div>
         
-        <h2 className="relative z-10 font-orbitron text-[32px] lg:text-[42px] font-black text-white mb-6 lg:mb-8 leading-[36px] lg:leading-[42px] tracking-tighter">
+        <h2 className="relative z-10 font-orbitron text-[28px] lg:text-[42px] font-black text-white mb-6 lg:mb-8 leading-tight lg:leading-[42px] tracking-tighter">
           INICIAR <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-blue text-glow uppercase text-[35px] lg:text-[45px]">PROTOCOLO ESCALA</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-blue text-glow uppercase text-[24px] lg:text-[45px] block mt-2 lg:inline">PROTOCOLO ESCALA</span>
         </h2>
         
         <p className="relative z-10 text-sm lg:text-base text-slate-400 max-w-[545px] mx-auto mb-8 lg:mb-12 font-light leading-relaxed px-2">
