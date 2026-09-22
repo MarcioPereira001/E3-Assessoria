@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import NeonButton from '../ui/NeonButton';
-import { ArrowDown, TrendingUp } from 'lucide-react';
+import { ArrowDown, TrendingUp, Cpu, Database, Facebook, RefreshCw, Layers } from 'lucide-react';
 
 const Counter: React.FC<{ value: number; prefix?: string; suffix?: string; decimals?: number }> = ({ value, prefix = "", suffix = "", decimals = 0 }) => {
   const ref = useRef(null);
@@ -26,9 +26,17 @@ const Counter: React.FC<{ value: number; prefix?: string; suffix?: string; decim
 };
 
 const Hero: React.FC = () => {
+  const [isShrunk, setIsShrunk] = React.useState(false);
   const scrollToPricing = () => {
     document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsShrunk(true);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="relative min-h-screen flex items-center justify-center pt-12 lg:pt-16 overflow-hidden">
@@ -37,7 +45,33 @@ const Hero: React.FC = () => {
 
       {/* Hero Content */}
       <div className="container mx-auto px-4 z-20 relative">
-        <div className="flex flex-col items-center max-w-5xl mx-auto text-center">
+        {/* Top Logo / Header area */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ 
+            opacity: isShrunk ? 0 : 1, 
+            y: 0,
+            scale: isShrunk ? 0.4 : 1,
+            marginBottom: isShrunk ? "0px" : "8px"
+          }}
+          transition={{ 
+            duration: isShrunk ? 1.5 : 1, 
+            ease: "easeInOut" 
+          }}
+          className="w-full flex justify-center origin-top"
+        >
+          <img 
+            src="https://www.image2url.com/r2/default/images/1790117936932-c2071005-35d6-4944-98c1-12efa4275ebd.png" 
+            alt="E3 Assessoria Logo" 
+            className="w-48 lg:w-64 h-auto object-contain filter brightness-110 opacity-80"
+          />
+        </motion.div>
+
+        <motion.div 
+          animate={{ y: isShrunk ? -100 : 0 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="flex flex-col items-center max-w-5xl mx-auto text-center"
+        >
           
           {/* Subject Image with Effects - Now at the background of the text or tightly above */}
           <div className="relative w-full flex items-end justify-center -mb-20 lg:-mb-32">
@@ -174,13 +208,59 @@ const Hero: React.FC = () => {
               className="flex flex-col md:flex-row gap-6 lg:gap-10 justify-center items-center"
             >
               <NeonButton text="INICIAR PROTOCOLO" onClick={scrollToPricing} className="w-full md:w-auto px-12 py-5 text-sm lg:text-lg font-orbitron tracking-widest" />
-              <div className="flex flex-col items-center gap-1 font-mono text-[9px] lg:text-[11px] text-slate-500 uppercase tracking-[0.3em] border-t md:border-t-0 md:border-l border-slate-800 pt-4 md:pt-0 md:pl-6">
-                 <span className="text-neon-blue">Core: Estruturação Comercial</span>
-                 <span className="opacity-60">Negócios: Expansão Global</span>
+              <div className="flex flex-col items-center gap-1.5 font-mono text-[10px] lg:text-[12px] text-slate-500 uppercase tracking-[0.3em] border-t md:border-t-0 md:border-l border-slate-800 pt-5 md:pt-0 md:pl-8">
+                 <span className="text-slate-400 font-bold">Arquitetura de Escala</span>
+                 <span className="opacity-70 text-white/90">Expansão de Ecossistemas</span>
+              </div>
+            </motion.div>
+
+            {/* Trust Badges Section - Horizontal Band */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 1 }}
+              className="mt-20 lg:mt-32 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-black/40 backdrop-blur-md border-t border-white/5 py-8 lg:py-12"
+            >
+              <div className="container mx-auto px-4">
+                <p className="text-slate-500 font-mono text-[10px] lg:text-[12px] tracking-[0.6em] uppercase mb-10 opacity-70">
+                  Tecnologia e Processos empregados na estruturação:
+                </p>
+                <div className="flex flex-wrap justify-center items-center gap-10 lg:gap-24">
+                  <div className="flex flex-col items-center gap-3 group transition-all duration-300 opacity-40 hover:opacity-100 cursor-default">
+                    <div className="p-3 bg-white/5 rounded-xl border border-white/5 group-hover:border-neon-blue/30 group-hover:bg-neon-blue/5 transition-all">
+                      <Layers size={22} className="text-slate-400 group-hover:text-neon-blue transition-colors" />
+                    </div>
+                    <span className="font-mono text-[9px] tracking-[0.2em] text-slate-500 group-hover:text-slate-300">CRM SYSTEMS</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-3 group transition-all duration-300 opacity-40 hover:opacity-100 cursor-default">
+                    <div className="p-3 bg-white/5 rounded-xl border border-white/5 group-hover:border-neon-blue/30 group-hover:bg-neon-blue/5 transition-all">
+                      <Facebook size={22} className="text-slate-400 group-hover:text-neon-blue transition-colors" />
+                    </div>
+                    <span className="font-mono text-[9px] tracking-[0.2em] text-slate-500 group-hover:text-slate-300">META ADS</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-3 group transition-all duration-300 opacity-40 hover:opacity-100 cursor-default">
+                    <div className="p-3 bg-white/5 rounded-xl border border-white/5 group-hover:border-neon-blue/30 group-hover:bg-neon-blue/5 transition-all">
+                      <Cpu size={22} className="text-slate-400 group-hover:text-neon-blue transition-colors" />
+                    </div>
+                    <span className="font-mono text-[9px] tracking-[0.2em] text-slate-500 group-hover:text-slate-300">AUTOMATION</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-3 group transition-all duration-300 opacity-40 hover:opacity-100 cursor-default">
+                    <div className="p-3 bg-white/5 rounded-xl border border-white/5 group-hover:border-neon-blue/30 group-hover:bg-neon-blue/5 transition-all">
+                      <Database size={22} className="text-slate-400 group-hover:text-neon-blue transition-colors" />
+                    </div>
+                    <span className="font-mono text-[9px] tracking-[0.2em] text-slate-500 group-hover:text-slate-300">DATA SCIENCE</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-3 group transition-all duration-300 opacity-40 hover:opacity-100 cursor-default">
+                    <div className="p-3 bg-white/5 rounded-xl border border-white/5 group-hover:border-neon-blue/30 group-hover:bg-neon-blue/5 transition-all">
+                      <RefreshCw size={22} className="text-slate-400 group-hover:text-neon-blue transition-colors" />
+                    </div>
+                    <span className="font-mono text-[9px] tracking-[0.2em] text-slate-500 group-hover:text-slate-300">LTV PROTOCOLS</span>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Premium Data Dashboard Visual */}
         <motion.div

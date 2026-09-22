@@ -4,6 +4,7 @@ import Hero from './components/sections/Hero';
 import PainPoints from './components/sections/PainPoints';
 import Methodology from './components/sections/Methodology';
 import Roadmap from './components/sections/Roadmap';
+import Founder from './components/sections/Founder';
 import SocialProof from './components/sections/SocialProof';
 import CtaSection from './components/sections/CtaSection';
 import Faq from './components/sections/Faq';
@@ -23,6 +24,7 @@ const App: React.FC = () => {
         <Hero />
         <PainPoints />
         <Methodology />
+        <Founder />
         <Roadmap />
         <SocialProof />
         <CtaSection />

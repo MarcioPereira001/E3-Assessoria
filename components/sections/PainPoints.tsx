@@ -34,8 +34,13 @@ const PainPoints: React.FC = () => {
 
       <div className="text-center max-w-4xl mx-auto mb-12 lg:mb-20 relative">
         <div className="font-mono text-neon-blue text-[8px] lg:text-[10px] tracking-[0.5em] mb-4 opacity-50 uppercase">Diagnóstico de Gestão de Negócios</div>
-        <h2 className="font-orbitron text-2xl md:text-5xl font-black text-white mb-6">
-          GARGALOS DE <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-red-500 to-red-400 text-glow-red uppercase">CRESCIMENTO</span>
+        <h2 className="font-orbitron font-black text-center flex flex-col items-center mb-10 lg:mb-14">
+          <span className="text-[67px] leading-[52px] text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-red-500 to-red-400 text-glow-red uppercase">
+            GARGALOS
+          </span>
+          <span className="text-[22px] leading-[22px] text-white tracking-[0.6em] uppercase mt-4 opacity-90 font-bold">
+            de Crescimento
+          </span>
         </h2>
         <p className="text-[#8b6464] text-sm lg:text-lg font-light leading-relaxed px-4 lg:px-0">
           Sua <span className="text-white">Empresa</span> não tem um problema de "crise". Ela tem uma falha na <span className="text-slate-300 font-semibold italic">Estruturação Comercial</span>. Resolvemos os 4 principais vetores que impedem sua escala:
@@ -68,12 +73,23 @@ const PainPoints: React.FC = () => {
         transition={{ delay: 0.4, duration: 0.8 }}
         className="mt-16 lg:mt-24 text-center px-4"
       >
-        <p className="text-white font-orbitron text-lg lg:text-2xl font-bold tracking-tight max-w-3xl mx-auto leading-relaxed">
+        <p className="text-white font-orbitron text-lg lg:text-[21px] font-bold tracking-tight lg:w-[690px] mx-auto leading-relaxed">
           Se todos esses pontos fossem <span className="text-neon-blue">resolvidos hoje</span>, quão rápido sua empresa estaria <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-white">dominando o mercado?</span>
         </p>
         <p className="mt-4 text-slate-500 font-mono text-[10px] lg:text-[12px] uppercase tracking-[0.3em]">
           O custo da inação é maior que o investimento na escala.
         </p>
+
+        <div className="mt-10 flex justify-center">
+          <motion.button
+            whileHover={{ scale: 1.05, backgroundColor: "rgba(30, 41, 59, 0.8)" }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-3 bg-slate-900 border border-neon-blue/30 text-neon-blue font-orbitron text-xs lg:text-sm tracking-[0.2em] rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(45,140,255,0.1)] hover:shadow-[0_0_25px_rgba(45,140,255,0.2)] uppercase font-bold"
+            onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            Quero Resolver
+          </motion.button>
+        </div>
       </motion.div>
     </SectionWrapper>
   );

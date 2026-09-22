@@ -1,6 +1,7 @@
 import React from 'react';
 import SectionWrapper from '../ui/SectionWrapper';
 import { Star } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const SocialProof: React.FC = () => {
   const testimonials = [
@@ -11,9 +12,9 @@ const SocialProof: React.FC = () => {
       roi: "LUCRO: +125%"
     },
     {
-      name: "FERNANDA LIMA",
-      role: "Diretora, VarejoX",
-      text: "A implementação do Tráfego Pago técnico eliminou os gargalos. Nosso Marketing Digital agora opera com métricas reais e margem de lucro otimizada.",
+      name: "JOÃO RICARDO",
+      role: "Proprietário, Cotafácil Conde-BA",
+      text: "A implementação do Tráfego Pago técnico eliminou os gargalos. Nosso Marketing agora gera mais resultado e a equipe sabendo o que fazer para vender mais.",
       roi: "ROI: 3.5x"
     },
     {
@@ -35,7 +36,14 @@ const SocialProof: React.FC = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 px-4 lg:px-0">
         {testimonials.map((t, i) => (
-          <div key={i} className="bg-white/5 backdrop-blur-xl p-8 lg:p-10 rounded-[32px] border border-white/10 flex flex-col justify-between hover:bg-white/10 hover:border-white/20 transition-all duration-500 group relative shadow-2xl">
+          <motion.div 
+            key={i} 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: i * 0.2 }}
+            className="bg-white/5 backdrop-blur-xl p-8 lg:p-10 rounded-[32px] border border-white/10 flex flex-col justify-between hover:bg-white/10 hover:border-white/20 transition-all duration-500 group relative shadow-2xl"
+          >
             <div>
               <div className="flex gap-1.5 mb-6 lg:mb-8">
                 {[...Array(5)].map((_, idx) => <Star key={idx} size={12} className="text-neon-blue fill-neon-blue" />)}
@@ -54,7 +62,7 @@ const SocialProof: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </SectionWrapper>
