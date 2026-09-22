@@ -13,11 +13,8 @@ import FloatingWhatsApp from './components/FloatingWhatsApp';
 const App: React.FC = () => {
   return (
     <main className="relative min-h-screen bg-neon-dark text-slate-200 selection:bg-neon-blue selection:text-black overflow-hidden">
-      {/* Global Scanline Effect */}
-      <div className="scanline animate-scanline" />
-
       {/* Background & Animations */}
-      <div className="absolute inset-0 w-full h-full z-0 opacity-50">
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
           <BackgroundEffects />
       </div>
 

@@ -15,9 +15,9 @@ const FloatingWhatsApp: React.FC = () => {
       animate={{ scale: 1 }}
       transition={{ delay: 2, type: "spring" }}
     >
-      <MessageCircle size={32} fill="white" className="text-green-500" />
-      <span className="absolute right-full mr-4 bg-white text-black px-3 py-1 rounded text-sm font-bold whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity hidden md:block">
-        Fale conosco
+      <MessageCircle size={28} fill="white" className="text-green-500" />
+      <span className="absolute right-full mr-4 bg-brand-midnight text-white px-4 py-2 rounded-lg text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block shadow-xl">
+        CONSULTORIA AO VIVO
       </span>
     </motion.a>
   );

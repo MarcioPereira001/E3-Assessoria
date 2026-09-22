@@ -4,44 +4,42 @@ import { Rocket, GraduationCap, Server } from 'lucide-react';
 import { RoadmapStepProps } from '../../types';
 
 const RoadmapCard: React.FC<RoadmapStepProps> = ({ phase, title, items, type, isLast }) => {
-  const colors = {
-    short: 'bg-neon-blue shadow-[0_0_20px_rgba(0,242,255,0.4)]',
-    medium: 'bg-neon-purple shadow-[0_0_20px_rgba(112,0,255,0.4)]',
-    long: 'bg-white shadow-[0_0_20px_rgba(255,255,255,0.4)]',
+  const accentGradients = {
+    short: 'from-[#0051FF] to-[#2D8CFF]',
+    medium: 'from-purple-600 to-purple-400',
+    long: 'from-slate-400 to-white',
   };
 
   const textColors = {
-    short: 'text-neon-blue',
-    medium: 'text-neon-purple',
+    short: 'text-[#2D8CFF]',
+    medium: 'text-purple-400',
     long: 'text-white'
   }
 
   const icons = {
-    short: <Rocket className="text-black" size={24} />,
-    medium: <GraduationCap className="text-black" size={24} />,
-    long: <Server className="text-black" size={24} />,
+    short: <Rocket className="text-white" size={24} />,
+    medium: <GraduationCap className="text-white" size={24} />,
+    long: <Server className="text-white" size={24} />,
   };
 
   return (
     <div className="relative w-full max-w-4xl mx-auto mb-10 lg:mb-16 last:mb-0 group">
-      <div className={`relative bg-neon-dark/60 backdrop-blur-md border border-slate-900 p-6 lg:p-10 rounded-none transition-all duration-500 hover:border-neon-blue/30 group-hover:-translate-y-2 relative overflow-hidden`}>
-        {/* HUD Corner */}
-        <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-white/5 group-hover:border-neon-blue/20 transition-colors" />
-
-        <div className="flex flex-col md:flex-row gap-6 lg:gap-10 items-start text-left">
-            <div className={`shrink-0 w-12 lg:w-14 h-12 lg:h-14 rounded-none flex items-center justify-center ${colors[type]} mb-4 md:mb-0`}>
+      <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 p-8 lg:p-12 rounded-[32px] transition-all duration-500 hover:bg-white/10 hover:border-white/20 group-hover:-translate-y-2 shadow-2xl overflow-hidden">
+        
+        <div className="flex flex-col md:flex-row gap-8 lg:gap-12 items-start text-left relative z-10">
+            <div className={`shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-br ${accentGradients[type]} shadow-lg mb-4 md:mb-0`}>
                 {icons[type]}
             </div>
             
             <div className="flex-1">
-                <span className={`font-mono text-[8px] lg:text-[10px] uppercase tracking-[0.4em] block mb-2 ${textColors[type]}`}>{phase}</span>
+                <span className={`font-mono text-[10px] lg:text-[12px] uppercase tracking-[0.4em] block mb-3 font-bold ${textColors[type]}`}>{phase}</span>
                 
-                <h3 className="font-orbitron text-lg lg:text-2xl font-bold text-white mb-4 lg:mb-6 tracking-widest uppercase">{title}</h3>
+                <h3 className="font-orbitron text-xl lg:text-3xl font-bold text-white mb-6 lg:mb-8 tracking-widest uppercase">{title}</h3>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
                     {items.map((item, idx) => (
-                        <div key={idx} className="flex items-center gap-3 text-slate-500 group-hover:text-slate-300 transition-colors text-xs lg:text-sm leading-tight">
-                             <div className={`w-1 h-1 rounded-full ${colors[type]} opacity-50`}></div>
+                        <div key={idx} className="flex items-center gap-4 text-slate-400 group-hover:text-white transition-colors text-sm lg:text-base font-light">
+                             <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-br ${accentGradients[type]} opacity-70`}></div>
                              <span>{item}</span>
                         </div>
                     ))}
@@ -59,7 +57,7 @@ const Roadmap: React.FC = () => {
       <div className="text-center mb-12 lg:mb-24 relative z-10 px-4">
         <div className="font-mono text-neon-blue text-[8px] lg:text-[10px] tracking-[0.5em] mb-4 opacity-50 uppercase">Fluxo de Implementação</div>
         <h2 className="font-orbitron text-2xl md:text-5xl font-black text-white mb-4 lg:mb-6 tracking-tighter">
-          SEQUÊNCIA DE <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-white text-glow">DEPLOYMENT</span>
+          SEQUÊNCIA DE <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-white text-glow">IMPLEMENTAÇÃO</span>
         </h2>
         <p className="text-slate-500 text-sm lg:text-lg font-light max-w-2xl mx-auto">Cronograma de evolução sistêmica em 12 meses de alta performance.</p>
       </div>

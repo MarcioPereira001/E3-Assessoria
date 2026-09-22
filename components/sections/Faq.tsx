@@ -7,16 +7,18 @@ const FaqItem: React.FC<{ question: string; answer: string; index: number }> = (
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-slate-900 group">
+    <div className="border-b border-white/5 group">
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-6 lg:py-8 flex justify-between items-center text-left focus:outline-none"
+        className="w-full py-8 flex justify-between items-center text-left focus:outline-none"
       >
-        <div className="flex items-center gap-4 lg:gap-6">
-          <span className="font-mono text-[8px] lg:text-[10px] text-slate-800 group-hover:text-neon-blue/40 transition-colors">[0{index + 1}]</span>
-          <span className="text-sm lg:text-lg font-orbitron font-bold text-white tracking-widest uppercase group-hover:text-glow transition-all">{question}</span>
+        <div className="flex items-center gap-6">
+          <span className="font-mono text-[10px] text-white/20 group-hover:text-neon-blue/60 transition-colors uppercase font-bold tracking-widest">{index < 9 ? `0${index + 1}` : index + 1}</span>
+          <span className="text-base lg:text-xl font-orbitron font-bold text-white tracking-widest uppercase group-hover:text-neon-blue transition-all duration-300">{question}</span>
         </div>
-        {isOpen ? <Minus size={16} className="text-neon-blue shrink-0" /> : <Plus size={16} className="text-slate-700 shrink-0" />}
+        <div className={`p-2 rounded-full border transition-all duration-500 ${isOpen ? 'bg-neon-blue/10 border-neon-blue/30 rotate-180' : 'bg-transparent border-white/10'}`}>
+          {isOpen ? <Minus size={18} className="text-neon-blue" /> : <Plus size={18} className="text-white/40" />}
+        </div>
       </button>
       <AnimatePresence>
         {isOpen && (

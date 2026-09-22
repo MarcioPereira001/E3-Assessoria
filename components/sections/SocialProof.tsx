@@ -33,26 +33,25 @@ const SocialProof: React.FC = () => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 px-4 lg:px-0">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 px-4 lg:px-0">
         {testimonials.map((t, i) => (
-          <div key={i} className="bg-neon-dark/40 backdrop-blur-md p-6 lg:p-8 rounded-none border border-slate-900 flex flex-col justify-between hover:border-neon-blue/30 transition-all duration-500 group relative">
-             {/* Card ID background label */}
-             <div className="absolute top-4 right-6 font-mono text-[8px] text-slate-800 opacity-30">REF_ID: #00{i+1}</div>
-             
+          <div key={i} className="bg-white/5 backdrop-blur-xl p-8 lg:p-10 rounded-[32px] border border-white/10 flex flex-col justify-between hover:bg-white/10 hover:border-white/20 transition-all duration-500 group relative shadow-2xl">
             <div>
-              <div className="flex gap-1 mb-4 lg:mb-6">
-                {[...Array(5)].map((_, idx) => <Star key={idx} size={10} className="text-neon-blue fill-neon-blue/20" />)}
+              <div className="flex gap-1.5 mb-6 lg:mb-8">
+                {[...Array(5)].map((_, idx) => <Star key={idx} size={12} className="text-neon-blue fill-neon-blue" />)}
               </div>
-              <p className="text-slate-500 italic mb-8 lg:mb-10 text-xs lg:text-sm leading-relaxed group-hover:text-slate-300 transition-colors">"{t.text}"</p>
+              <p className="text-slate-400 italic mb-10 lg:mb-12 text-sm lg:text-base font-light leading-relaxed group-hover:text-slate-200 transition-colors">"{t.text}"</p>
             </div>
             <div>
-              <div className="w-full h-[1px] bg-slate-900 mb-4 lg:mb-6 group-hover:bg-neon-blue/20 transition-colors"></div>
-              <div className="flex justify-between items-center">
-                <div>
-                  <h4 className="text-white font-orbitron text-[10px] lg:text-xs font-bold tracking-widest uppercase">{t.name}</h4>
-                  <p className="text-slate-600 font-mono text-[8px] lg:text-[9px] uppercase tracking-wider">{t.role}</p>
+              <div className="w-full h-px bg-white/5 mb-6 lg:mb-8 group-hover:bg-white/10 transition-colors"></div>
+              <div className="flex justify-between items-end">
+                <div className="text-left">
+                  <h4 className="text-white font-orbitron text-xs lg:text-sm font-bold tracking-widest uppercase">{t.name}</h4>
+                  <p className="text-slate-500 font-mono text-[9px] lg:text-[10px] uppercase tracking-widest mt-1">{t.role}</p>
                 </div>
-                <span className="text-neon-blue font-mono text-[9px] lg:text-[10px] font-bold bg-neon-blue/5 border border-neon-blue/20 px-2 lg:px-3 py-1 rounded-none text-glow">{t.roi}</span>
+                <div className="text-right">
+                  <span className="text-white font-mono text-[10px] lg:text-[12px] font-bold bg-white/5 border border-white/10 px-4 py-1.5 rounded-full shadow-lg">{t.roi}</span>
+                </div>
               </div>
             </div>
           </div>

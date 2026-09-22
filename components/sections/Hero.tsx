@@ -63,19 +63,22 @@ const Hero: React.FC = () => {
                       }}
                     />
                     
-                    {/* Futuristic Overlays (Scanline & HUD) */}
-                    <div className="absolute top-1/3 -right-4 lg:-right-12 z-20 bg-black/60 backdrop-blur-md border border-neon-blue/30 p-2 lg:p-3 rounded-none font-mono text-[7px] lg:text-[9px] text-neon-blue tracking-tighter animate-pulse shadow-[0_0_15px_rgba(0,242,255,0.1)]">
-                        <div className="flex flex-col gap-1 text-right">
-                            <span className="text-white opacity-50 underline decoration-neon-blue/50">MÉTRICAS_AO_VIVO</span>
-                            <span>Setor_Vendas: <span className="text-white">+83%</span></span>
-                            <span>Conversão_LTV: <span className="text-white">MAX</span></span>
+                    {/* Refined Overlays (Glassmorphism & Luxury) */}
+                    <div className="absolute top-1/3 -right-6 lg:-right-16 z-20 bg-white/5 backdrop-blur-xl border border-white/10 p-3 lg:p-4 rounded-2xl font-mono text-[8px] lg:text-[10px] text-white tracking-tight shadow-2xl">
+                        <div className="flex flex-col gap-1.5 text-right">
+                            <span className="text-neon-blue/80 font-bold tracking-widest text-[7px] uppercase">MÉTRICAS EM REAL-TIME</span>
+                            <div className="h-px bg-white/10 my-1" />
+                            <span>Setor de Vendas: <span className="text-neon-blue font-bold">+83%</span></span>
+                            <span>Conversão LTV: <span className="text-neon-blue font-bold">MAX</span></span>
                         </div>
                     </div>
 
-                    <div className="absolute top-1/4 -left-4 lg:-left-12 z-20 bg-black/60 backdrop-blur-md border border-neon-blue/30 p-2 lg:p-3 rounded-none font-mono text-[7px] lg:text-[9px] text-white/50 tracking-tighter animate-pulse">
-                        <div className="flex flex-col gap-1 text-left">
-                            <span className="text-neon-blue">ESTRUTURAÇÃO: ATIVA</span>
-                            <span>MARGEM_LUCRO: <span className="text-neon-blue">+42%</span></span>
+                    <div className="absolute top-1/4 -left-6 lg:-left-16 z-20 bg-white/5 backdrop-blur-xl border border-white/10 p-3 lg:p-4 rounded-2xl font-mono text-[8px] lg:text-[10px] text-white tracking-tight shadow-2xl">
+                        <div className="flex flex-col gap-1.5 text-left">
+                            <span className="text-neon-blue/80 font-bold tracking-widest text-[7px] uppercase">STATUS DA OPERAÇÃO</span>
+                            <div className="h-px bg-white/10 my-1" />
+                            <span className="flex items-center gap-2">ESTRUTURAÇÃO: <span className="text-green-400 font-bold">ATIVA</span></span>
+                            <span>MARGEM DE LUCRO: <span className="text-neon-blue font-bold">+42%</span></span>
                         </div>
                     </div>
                 </div>
@@ -88,9 +91,9 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="inline-flex items-center gap-2 px-3 lg:px-4 py-1.5 lg:py-2 rounded-full border border-neon-blue/30 bg-neon-blue/5 text-neon-blue mb-6 lg:mb-8 backdrop-blur-md shadow-[0_0_10px_rgba(0,242,255,0.05)] font-mono text-[8px] lg:text-[10px] tracking-[0.2em]"
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 bg-white/5 text-white/80 mb-6 lg:mb-8 backdrop-blur-md shadow-xl font-mono text-[9px] lg:text-[11px] tracking-[0.3em] uppercase"
             >
-              <div className="w-1.5 lg:w-2 h-1.5 lg:h-2 rounded-full bg-neon-blue animate-pulse" />
+              <div className="w-2 h-2 rounded-full bg-neon-blue shadow-[0_0_10px_#2D8CFF] animate-pulse" />
               SISTEMA DE ESCALA: 100%
             </motion.div>
 
@@ -98,7 +101,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="font-orbitron text-4xl md:text-7xl lg:text-8xl font-black text-white mb-6 leading-tight lg:leading-none tracking-tighter"
+              className="font-orbitron text-[50px] font-black text-white mb-6 leading-tight lg:leading-none tracking-tighter"
             >
               PROTOCOLO <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-blue/50 text-glow">ESCALA</span>
             </motion.h1>
@@ -127,86 +130,92 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Dashboard Preview Visual */}
+        {/* Premium Data Dashboard Visual */}
         <motion.div
-          initial={{ opacity: 0, y: 100, rotateX: 20 }}
+          initial={{ opacity: 0, y: 100, rotateX: 10 }}
           animate={{ opacity: 1, y: 0, rotateX: 0 }}
           transition={{ delay: 0.8, duration: 1 }}
-          className="mt-24 mx-auto max-w-5xl relative perspective-1000"
+          className="mt-24 mx-auto max-w-5xl relative"
         >
-            {/* Glow under the dashboard */}
-            <div className="absolute -inset-2 bg-neon-blue/20 rounded-xl blur-xl opacity-50 animate-pulse"></div>
+            {/* Soft ambient glow under the dashboard */}
+            <div className="absolute -inset-4 bg-neon-blue/10 rounded-[32px] blur-3xl opacity-30"></div>
             
-            <div className="relative bg-black border border-slate-800 rounded-xl p-4 shadow-2xl overflow-hidden backdrop-blur-xl bg-opacity-80">
-                {/* Scanline Effect */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neon-blue/5 to-transparent h-[10px] w-full animate-pulse pointer-events-none" style={{ animationDuration: '3s' }}></div>
-
-                <div className="flex items-center gap-2 mb-4 border-b border-slate-800 pb-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_10px_red]"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500 shadow-[0_0_10px_yellow]"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500 shadow-[0_0_10px_green]"></div>
-                    <div className="ml-auto text-xs font-mono text-slate-500">DASHBOARD_V1.2</div>
+            <div className="relative bg-slate-900/40 border border-white/10 rounded-[24px] p-6 shadow-2xl backdrop-blur-2xl overflow-hidden">
+                <div className="flex items-center justify-between mb-6 border-b border-white/5 pb-4">
+                    <div className="flex flex-col text-left">
+                      <h4 className="text-white font-orbitron text-base font-bold tracking-wider">DASHBOARD DE PERFORMANCE</h4>
+                      <p className="text-slate-500 font-mono text-[9px] tracking-widest uppercase">Protocolo Escala v1.2 • Live Data Feed</p>
+                    </div>
+                    <div className="flex gap-3">
+                        <div className="px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-[10px] font-mono tracking-tighter flex items-center gap-1.5">
+                          <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                          ONLINE
+                        </div>
+                    </div>
                 </div>
                 {/* Mock UI Content */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
                     <motion.div 
-                      whileInView={{ scale: [0.95, 1], opacity: [0.8, 1] }}
+                      whileInView={{ scale: [0.98, 1], opacity: [0.9, 1] }}
                       transition={{ duration: 0.5 }}
-                      className="bg-slate-900/80 border border-slate-800 p-6 rounded-lg hover:border-neon-blue/50 transition-colors"
+                      className="bg-white/5 border border-white/10 p-5 rounded-xl hover:bg-white/10 transition-all duration-500"
                     >
-                        <p className="text-slate-400 text-sm font-mono">RECEITA_PREVISÍVEL</p>
+                        <p className="text-slate-400 text-[9px] font-mono tracking-[0.2em] uppercase">Receita Previsível</p>
                         <h3 className="text-2xl font-bold text-white mt-2 flex items-center gap-2">
                              R$ <Counter value={1.2} suffix="M" decimals={1} /> <TrendingUp size={20} className="text-green-400" />
                         </h3>
-                        <div className="mt-4 h-1 bg-slate-800 rounded-full overflow-hidden">
+                        <div className="mt-4 h-1 bg-white/5 rounded-full overflow-hidden">
                             <motion.div 
                               initial={{ width: 0 }}
                               whileInView={{ width: "70%" }}
                               transition={{ duration: 1.5, delay: 0.5 }}
-                              className="h-full bg-neon-blue shadow-[0_0_10px_#2d8cff]"
+                              className="h-full bg-gradient-to-r from-[#0051FF] to-[#2D8CFF] shadow-[0_0_15px_rgba(45,140,255,0.4)]"
                             ></motion.div>
                         </div>
                     </motion.div>
                     <motion.div 
-                      whileInView={{ scale: [0.95, 1], opacity: [0.8, 1] }}
+                      whileInView={{ scale: [0.98, 1], opacity: [0.9, 1] }}
                       transition={{ duration: 0.5, delay: 0.1 }}
-                      className="bg-slate-900/80 border border-slate-800 p-6 rounded-lg hover:border-purple-500/50 transition-colors"
+                      className="bg-white/5 border border-white/10 p-5 rounded-xl hover:bg-white/10 transition-all duration-500"
                     >
-                        <p className="text-slate-400 text-sm font-mono">CONVERSÃO_TRÁFEGO</p>
+                        <p className="text-slate-400 text-[9px] font-mono tracking-[0.2em] uppercase">Conversão de Tráfego</p>
                         <h3 className="text-2xl font-bold text-white mt-2">
                           <Counter value={18.5} suffix="%" decimals={1} />
                         </h3>
-                         <div className="mt-4 h-1 bg-slate-800 rounded-full overflow-hidden">
+                         <div className="mt-4 h-1 bg-white/5 rounded-full overflow-hidden">
                             <motion.div 
                               initial={{ width: 0 }}
                               whileInView={{ width: "45%" }}
                               transition={{ duration: 1.5, delay: 0.6 }}
-                              className="h-full bg-purple-500 shadow-[0_0_10px_purple]"
+                              className="h-full bg-gradient-to-r from-purple-600 to-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.4)]"
                             ></motion.div>
                         </div>
                     </motion.div>
                     <motion.div 
-                      whileInView={{ scale: [0.95, 1], opacity: [0.8, 1] }}
+                      whileInView={{ scale: [0.98, 1], opacity: [0.9, 1] }}
                       transition={{ duration: 0.5, delay: 0.2 }}
-                      className="bg-slate-900/80 border border-slate-800 p-6 rounded-lg hover:border-green-500/50 transition-colors"
+                      className="bg-white/5 border border-white/10 p-5 rounded-xl hover:bg-white/10 transition-all duration-500"
                     >
-                        <p className="text-slate-400 text-sm font-mono">MARGEM_LUCRO</p>
+                        <p className="text-slate-400 text-[9px] font-mono tracking-[0.2em] uppercase">Margem de Lucro</p>
                         <h3 className="text-2xl font-bold text-white mt-2">
                           <Counter value={4.2} suffix="x" decimals={1} />
                         </h3>
-                         <div className="mt-4 h-1 bg-slate-800 rounded-full overflow-hidden">
+                         <div className="mt-4 h-1 bg-white/5 rounded-full overflow-hidden">
                             <motion.div 
                               initial={{ width: 0 }}
                               whileInView={{ width: "80%" }}
                               transition={{ duration: 1.5, delay: 0.7 }}
-                              className="h-full bg-green-400 shadow-[0_0_10px_green]"
+                              className="h-full bg-gradient-to-r from-green-600 to-green-400 shadow-[0_0_15px_rgba(34,197,94,0.4)]"
                             ></motion.div>
                         </div>
                     </motion.div>
                 </div>
-                <div className="mt-4 bg-slate-900/50 p-6 rounded-lg border border-dashed border-slate-800 flex items-center justify-between">
-                    <p className="text-slate-500 font-mono text-sm">INTEGRIDADE DO SISTEMA: <span className="text-green-400 animate-pulse">100%</span></p>
-                    <div className="text-xs text-slate-600 font-mono">ÚLTIMA_ATUALIZAÇÃO: AGORA</div>
+                <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <p className="text-slate-500 font-mono text-[9px] tracking-widest uppercase">Integridade do Sistema:</p>
+                      <span className="text-green-400 font-bold font-mono text-[9px] tracking-widest">100% OPERACIONAL</span>
+                    </div>
+                    <div className="text-[8px] text-slate-600 font-mono tracking-widest uppercase">Última Atualização: Sincronizado agora</div>
                 </div>
             </div>
         </motion.div>

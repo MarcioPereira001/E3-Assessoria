@@ -7,21 +7,21 @@ const Methodology: React.FC = () => {
   const pillars = [
     {
       id: "01",
-      name: "MARKETING DIGITAL",
+      name: "MARKETING",
       desc: "Engenharia de aquisição através de Tráfego Pago estratégico. Instalamos canais de captação que operam sob lógica matemática, garantindo um fluxo constante de leads qualificados para seu Negócio.",
       icon: <Target className="w-8 h-8 text-neon-blue" />,
       color: "border-neon-blue"
     },
     {
       id: "02",
-      name: "VENDAS E CONVERSÃO",
+      name: "VENDAS",
       desc: "Estruturação Comercial de alta performance. Processos e CRM calibrados para transformar o volume de Marketing em Receita Líquida, reduzindo o ciclo de fechamento e aumentando a taxa de conversão.",
       icon: <Zap className="w-8 h-8 text-neon-purple" />,
       color: "border-neon-purple"
     },
     {
       id: "03",
-      name: "LTV E LUCRATIVIDADE",
+      name: "LTV",
       desc: "Maximização da Margem de Lucro e valor do cliente. Estratégias de retenção e expansão de carteira para garantir que cada cliente gere faturamento recorrente e exponencial para sua Empresa.",
       icon: <RefreshCw className="w-8 h-8 text-white" />,
       color: "border-white"
@@ -48,28 +48,28 @@ const Methodology: React.FC = () => {
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-6">
           {pillars.map((p, i) => (
             <motion.div 
               key={i}
               initial={{ x: 50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ delay: i * 0.2, duration: 0.6 }}
-              className={`bg-neon-dark/40 backdrop-blur-md p-6 lg:p-8 rounded-none border-l-4 ${p.color} border-y border-r border-slate-900 hover:bg-neon-dark/60 transition-all duration-300 group relative`}
+              className="bg-white/5 backdrop-blur-xl p-8 rounded-[24px] border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-500 group relative shadow-xl overflow-hidden"
             >
-              {/* Scanline subtle effect on card hover */}
-              <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-10 transition-opacity pointer-events-none" />
+              {/* Subtle accent gradient on hover */}
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#2D8CFF] to-[#0051FF] opacity-50 group-hover:opacity-100 transition-opacity" />
               
-              <div className="flex justify-between items-start mb-3 lg:mb-4">
-                <div className="flex items-center gap-4 lg:gap-6">
-                    <span className="font-mono text-base lg:text-xl font-bold text-slate-800 group-hover:text-neon-blue/40 transition-colors">[{p.id}]</span>
-                    <h3 className="text-base lg:text-xl font-orbitron font-bold text-white tracking-widest uppercase">{p.name}</h3>
+              <div className="flex justify-between items-start mb-4">
+                <div className="flex items-center gap-6">
+                    <span className="font-mono text-xl font-bold text-white/20 group-hover:text-neon-blue/40 transition-colors">{p.id}</span>
+                    <h3 className="text-xl font-orbitron font-bold text-white tracking-widest uppercase">{p.name}</h3>
                 </div>
-                <div className="group-hover:scale-110 transition-transform duration-500 opacity-50 group-hover:opacity-100 hidden sm:block">
+                <div className="group-hover:scale-110 transition-transform duration-500 text-white/30 group-hover:text-white hidden sm:block">
                   {p.icon}
                 </div>
               </div>
-              <p className="text-slate-500 text-xs lg:text-sm leading-relaxed group-hover:text-slate-300 transition-colors">{p.desc}</p>
+              <p className="text-slate-400 text-sm lg:text-base leading-relaxed group-hover:text-slate-200 transition-colors">{p.desc}</p>
             </motion.div>
           ))}
         </div>

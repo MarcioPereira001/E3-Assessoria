@@ -1,6 +1,7 @@
 import React from 'react';
 import SectionWrapper from '../ui/SectionWrapper';
 import { XCircle, TrendingDown, Users, DollarSign } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const PainPoints: React.FC = () => {
   const pains = [
@@ -41,23 +42,39 @@ const PainPoints: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 relative px-4 lg:px-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 relative px-4 lg:px-0 max-w-6xl mx-auto">
         {pains.map((pain, index) => (
-          <div key={index} className="bg-neon-dark/40 backdrop-blur-md border border-slate-900 p-6 lg:p-8 rounded-none hover:border-neon-blue/30 transition-all duration-500 group hover:-translate-y-2 relative overflow-hidden">
-            {/* Corner accent */}
-            <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-neon-blue/20 group-hover:border-neon-blue/50 transition-colors" />
+          <div key={index} className="bg-white/5 backdrop-blur-xl border border-white/10 p-5 rounded-[20px] hover:bg-white/10 hover:border-white/20 transition-all duration-500 group hover:-translate-y-1 relative overflow-hidden shadow-xl flex flex-col justify-between min-h-[220px]">
+            {/* Subtle glow on hover */}
+            <div className="absolute -inset-1 bg-gradient-to-br from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity blur-lg" />
             
-            <div className="mb-4 lg:mb-6 text-[#ff0000] transition-all duration-300 w-10 lg:w-12 h-10 lg:h-12 flex items-center justify-start">
-              {pain.icon}
+            <div className="relative z-10">
+              <div className="mb-3 text-red-500/80 group-hover:text-red-500 transition-all duration-300 w-9 h-9 flex items-center justify-start relative z-10">
+                {React.cloneElement(pain.icon as React.ReactElement, { size: 28 })}
+              </div>
+              <h3 className="text-base lg:text-lg font-orbitron font-bold text-white mb-2 tracking-tighter uppercase relative z-10 leading-tight">{pain.title}</h3>
+              <p className="text-[#8b6464] text-xs lg:text-sm leading-relaxed transition-colors relative z-10 line-clamp-3">{pain.desc}</p>
             </div>
-            <h3 className="text-base lg:text-lg font-orbitron font-bold text-white mb-3 lg:mb-4 tracking-tighter uppercase">{pain.title}</h3>
-            <p className="text-[#8b6464] text-xs lg:text-sm leading-relaxed transition-colors">{pain.desc}</p>
             
-            {/* Bottom ID label */}
-            <div className="mt-6 lg:mt-8 font-mono text-[8px] text-slate-800 group-hover:text-neon-blue/30 transition-colors">ERR_LOG_00{index + 1}</div>
+            {/* Bottom identifier marker */}
+            <div className="mt-2 pt-2 border-t border-white/5 font-mono text-[8px] text-white/20 group-hover:text-white/40 transition-colors uppercase tracking-[0.2em] relative z-10">Diagnóstico {index + 1}</div>
           </div>
         ))}
       </div>
+
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.8 }}
+        className="mt-16 lg:mt-24 text-center px-4"
+      >
+        <p className="text-white font-orbitron text-lg lg:text-2xl font-bold tracking-tight max-w-3xl mx-auto leading-relaxed">
+          Se todos esses pontos fossem <span className="text-neon-blue">resolvidos hoje</span>, quão rápido sua empresa estaria <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-white">dominando o mercado?</span>
+        </p>
+        <p className="mt-4 text-slate-500 font-mono text-[10px] lg:text-[12px] uppercase tracking-[0.3em]">
+          O custo da inação é maior que o investimento na escala.
+        </p>
+      </motion.div>
     </SectionWrapper>
   );
 };

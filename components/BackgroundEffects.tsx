@@ -7,7 +7,6 @@ const RandomParticle: React.FC<{ delay: number }> = ({ delay }) => {
   const randomLeft = Math.random() * 100;
   const size = Math.random() * 4 + 1; // 1px to 5px
   const duration = Math.random() * 10 + 10; // 10s to 20s
-
   return (
     <motion.div
       className="absolute rounded-full bg-neon-blue blur-[1px]"
@@ -54,7 +53,6 @@ const BackgroundEffects: React.FC = () => {
       const width = window.innerWidth;
       const height = document.body.scrollHeight;
       setDocHeight(height);
-
       const centerX = width / 2;
       const amplitude = Math.min(width * 0.4, 300); // Max 300px sway
       const frequency = 800; // How often it curves vertically
@@ -70,12 +68,12 @@ const BackgroundEffects: React.FC = () => {
         
         d += `Q ${controlX} ${y + frequency / 2}, ${centerX} ${nextY} `;
       }
-
       setPathString(d);
     };
 
     updatePath();
     window.addEventListener('resize', updatePath);
+    
     // Observer to update when content changes size
     const observer = new ResizeObserver(updatePath);
     observer.observe(document.body);
@@ -137,7 +135,7 @@ const BackgroundEffects: React.FC = () => {
             <stop offset="100%" stopColor="#2d8cff" stopOpacity="0" />
           </linearGradient>
         </defs>
-
+        
         {/* The faint trace line (always visible) */}
         <path 
           d={pathString}
